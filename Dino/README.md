@@ -7,10 +7,6 @@
 
 # T-Rex Rush 
 
-![](https://github.com/shivamshekhar/Chrome-T-Rex-Rush/raw/master/screenshot.png)
-
-![](https://github.com/shivamshekhar/Chrome-T-Rex-Rush/raw/master/screenshot.gif)
-
 ### Description:
 A recreated version of the famous Chrome T-Rex in Python 
 
@@ -29,7 +25,7 @@ To run this game:
 * Run main.py
 
 ##### Controls:
-* Press UP or SPACE to make T-Rex jump over the obstacles
+* Press SPACE to make T-Rex jump over the obstacles
 * Press DOWN key to crouch
 * Avoid getting hit by obstacles. 
 
@@ -46,3 +42,4 @@ Email: shivamshekhar299@gmail.com
 #### References:
 * http://www.pygame.org/docs
 * https://github.com/wayou/t-rex-runner
+
