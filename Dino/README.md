@@ -1,6 +1,7 @@
 > this is a clone and slightly improved version from Shivam Shekhar
 > 
 > 遊戲最開始出現的 dino 叫 temp_dino，修改後就不能一直跳了（真正遊戲的 dino 叫 playerDino）
+> 
 > 修改成只有 dino 不是蹲下狀態時才會跳起來
 
 ![No longer maintained](https://img.shields.io/badge/Maintenance-OFF-red.svg)
