@@ -1,3 +1,5 @@
+> this is a clone and slightly improved version from Shivam Shekhar
+
 ![No longer maintained](https://img.shields.io/badge/Maintenance-OFF-red.svg)
 ### [DEPRECATED] This repository is no longer maintained
 > While this project is fully functional, I won't be able to accept any new pull requests or features. You are still welcome to explore, learn, and use the code provided here.
