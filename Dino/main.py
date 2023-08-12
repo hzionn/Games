@@ -272,7 +272,9 @@ class Cactus(pygame.sprite.Sprite):  # 仙人掌
             self.kill()
 
 
-class Ptera(pygame.sprite.Sprite):  # 飛鳥
+class Ptera(pygame.sprite.Sprite):
+    """飛鳥"""
+
     def __init__(self, speed=5, sizex=-1, sizey=-1):  # OK
         pygame.sprite.Sprite.__init__(self, self.containers)
         self.images, self.rect = load_sprite_sheet(
@@ -421,7 +423,9 @@ def introscreen():  # 起始畫面
                 if event.type == pygame.QUIT:  # 結束遊戲
                     return True
                 if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_SPACE and temp_dino.rect.bottom == int(0.98*height):
+                    if event.key == pygame.K_SPACE and temp_dino.rect.bottom == int(
+                        0.98 * height
+                    ):
                         temp_dino.isJumping = True  # 小恐龍跳躍
                         temp_dino.isBlinking = False  # 停止圖片切換
                         temp_dino.movement[1] = -1 * temp_dino.jumpSpeed  # 往上移動移動
@@ -531,10 +535,10 @@ def gameplay():
                         # 判斷空白鍵按下跳躍
                         if event.key == pygame.K_SPACE:
                             if (
-                                playerDino.rect.bottom == int(0.98 * height)
-                                and playerDino.isDucking != True
-                                # and playerDino.isJumping != True
-                            ):  # 保證小恐龍不能在空中跳躍
+                                playerDino.rect.bottom
+                                == int(0.98 * height)  # 保證小恐龍是站在地面
+                                and playerDino.isDucking != True  # 保證小恐龍現在不是蹲下（正蹲下時不能跳）
+                            ):
                                 jump()
 
                         # 向下鍵按下蹲下
