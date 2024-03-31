@@ -9,3 +9,14 @@ Collections of Python games.
 - NekoPuzzle
 - Pool
 
+---
+
+you may run `Dino` game by running the following command:
+```bash
+python Dino/main.py
+```
+or
+```bash
+cd Dino
+python main.py
+```
