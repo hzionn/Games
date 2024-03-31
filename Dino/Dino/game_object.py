@@ -2,9 +2,9 @@ import random
 
 import pygame
 
-from Dino.sprite import load_image, load_sprite_sheet
+from Dino.setting import BACKGROUND_COLOR, GRAVITY, SCREEN_HEIGHT, SCREEN_WIDTH
 from Dino.sound import load_sound
-from Dino.setting import BACKGROUND_COLOR, GRAVITY, SCREEN_WIDTH, SCREEN_HEIGHT
+from Dino.sprite import load_image, load_sprite_sheet
 
 
 def extractDigits(number):  # OK
@@ -104,7 +104,9 @@ class Dino:  # 小恐龍
 
         if not self.isDucking:  # 當小恐龍不是在蹲下的狀況時
             self.image = self.images[self.index]  # 設定image為，奔跑中的小恐龍
-            self.rect.width = self.stand_pos_width  # 將rect物件之寬度，設定為奔跑中的寬度
+            self.rect.width = (
+                self.stand_pos_width
+            )  # 將rect物件之寬度，設定為奔跑中的寬度
         else:  # 當小恐龍在蹲下的狀況
             self.image = self.images1[(self.index) % 2]  # 設定image為，蹲下的小恐龍
             self.rect.width = self.duck_pos_width  # 將rect物件之寬度，設定為蹲下的寬度
@@ -154,8 +156,14 @@ class Ptera(pygame.sprite.Sprite):
         self.images, self.rect = load_sprite_sheet(
             "ptera.png", 2, 1, sizex, sizey, -1
         )  # 獲得切割後的圖檔以及一個rect物件
-        self.ptera_height = [SCREEN_HEIGHT * 0.82, SCREEN_HEIGHT * 0.75, SCREEN_HEIGHT * 0.60]  # 設定飛鳥的三種高度
-        self.rect.centery = self.ptera_height[random.randrange(0, 3)]  # 隨機決定飛鳥的三個高度
+        self.ptera_height = [
+            SCREEN_HEIGHT * 0.82,
+            SCREEN_HEIGHT * 0.75,
+            SCREEN_HEIGHT * 0.60,
+        ]  # 設定飛鳥的三種高度
+        self.rect.centery = self.ptera_height[
+            random.randrange(0, 3)
+        ]  # 隨機決定飛鳥的三個高度
         self.rect.left = SCREEN_WIDTH + self.rect.width  # 初始仙人掌的位置在螢幕外
         self.image = self.images[0]  # 初始飛鳥的樣式
         self.movement = [-1 * speed, 0]  # 設定仙人掌的移動方向、速度
@@ -203,7 +211,9 @@ class Ground:
             self.rect.left = self.rect1.right  # 第一張圖片接在第二張圖片後
 
         if self.rect1.right < 0:  # 當第二張背景圖片完全超出螢幕
-            self.rect1.left = self.rect.right  # 第二張圖片接在第一張圖片後# 背景圖片# 背景
+            self.rect1.left = (
+                self.rect.right
+            )  # 第二張圖片接在第一張圖片後# 背景圖片# 背景
 
 
 class Cloud(pygame.sprite.Sprite):  # 雲

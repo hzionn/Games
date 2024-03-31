@@ -2,10 +2,10 @@ import random
 
 import pygame
 
+from Dino.game_object import Cactus, Cloud, Dino, Ground, Ptera, Scoreboard
+from Dino.setting import BACKGROUND_COLOR, FPS, TITLE
 from Dino.sound import load_sound
-from Dino.sprite import load_sprite_sheet, load_image
-from Dino.setting import TITLE, BACKGROUND_COLOR, FPS
-from Dino.game_object import Dino, Cactus, Ptera, Cloud, Ground, Scoreboard
+from Dino.sprite import load_image, load_sprite_sheet
 
 # -------------------------------------------------------------------------
 # SCREEN_SIZE       :視窗大小

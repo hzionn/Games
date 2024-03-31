@@ -20,7 +20,9 @@ def load_sprite_sheet(
     #   nx             :切成nx列
     #   ny             :切成ny行
     # -------------------------------------------------------------------------
-    fullpath = os.path.join(os.path.dirname(__file__), "sprites", sheetname)  # 獲得圖片路徑
+    fullpath = os.path.join(
+        os.path.dirname(__file__), "sprites", sheetname
+    )  # 獲得圖片路徑
     sheet = pygame.image.load(fullpath).convert()  # load image and turn into pixel
 
     sheet_rect = sheet.get_rect()  # 將圖片轉換為pygame.rect格式的物件
@@ -41,10 +43,14 @@ def load_sprite_sheet(
             if colorkey is not None:
                 if colorkey == -1:
                     colorkey = image.get_at((0, 0))  # 獲得圖片在(0,0)位置的顏色值
-                image.set_colorkey(colorkey, RLEACCEL)  # 與colorkey相同的顏色數值，將會被設定為透明
+                image.set_colorkey(
+                    colorkey, RLEACCEL
+                )  # 與colorkey相同的顏色數值，將會被設定為透明
 
             if scalex != -1 or scaley != -1:
-                image = pygame.transform.scale(image, (scalex, scaley))  # 縮小或放大圖片的大小
+                image = pygame.transform.scale(
+                    image, (scalex, scaley)
+                )  # 縮小或放大圖片的大小
 
             sprites.append(image)  # 將切割完成的圖片放進list
 
@@ -65,14 +71,18 @@ def load_image(
     #   colorkey       :透明度設定
     # -------------------------------------------------------------------------
 
-    fullpath = os.path.join(os.path.dirname(__file__), "sprites", image_name)  # 獲得圖片路徑
+    fullpath = os.path.join(
+        os.path.dirname(__file__), "sprites", image_name
+    )  # 獲得圖片路徑
     image = pygame.image.load(fullpath).convert()  # load image and turn into pixel
 
     # 去背
     if colorkey is not None:
         if colorkey == -1:
             colorkey = image.get_at((0, 0))  # 獲得圖片在(0,0)位置的顏色值
-        image.set_colorkey(colorkey, RLEACCEL)  # 與colorkey相同的顏色數值，將會被設定為透明
+        image.set_colorkey(
+            colorkey, RLEACCEL
+        )  # 與colorkey相同的顏色數值，將會被設定為透明
 
     if sizex != -1 or sizey != -1:
         image = pygame.transform.scale(image, (sizex, sizey))  # 縮小或放大圖片的大小
